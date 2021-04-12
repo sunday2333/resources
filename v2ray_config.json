@@ -1,0 +1,38 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "inbounds": [
+        {
+            "port": 80,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "",
+                        "level": 1,
+                        "alterId": 64
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "ws",
+                "wsSettings":{
+                    "path":"/",
+                    "headers":{}
+                },
+                "security": "none"
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ]
+}
